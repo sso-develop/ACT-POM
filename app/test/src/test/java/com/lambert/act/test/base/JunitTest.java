@@ -13,7 +13,8 @@ import org.springframework.util.Log4jConfigurer;
 //		"classpath:spring/biz-shared.xml",
 //		"classpath:spring/biz-feedback.xml",
 		"classpath:spring/common-dal.xml"
-//		"classpath:spring/biz-service-impl.xml"})
+//		"classpath:spring/biz-service-impl.xml"
+})
 public abstract class JunitTest {
 	
 	  static {  
