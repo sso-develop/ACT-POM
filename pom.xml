@@ -215,8 +215,8 @@
             <!--<module>app/common/service/integration</module>-->
             <!--<module>app/biz/service-impl</module>-->
             <!--<module>app/common/service/facade</module>-->
-            <module>app/test</module> 
-            <module>app/common/dal</module> 
+            <module>app/test</module>
+            <module>app/common/dal</module>
             <!--<module>app/web/home</module>-->
             <!--<module>app/web/feedback</module>-->
             <!--<module>assembly</module>-->
@@ -231,7 +231,7 @@
                     <activeByDefault>true</activeByDefault>
                 </activation>
                 <properties>
-                    <properties.dir>F:\workspace\ACT-POM\conf</properties.dir>
+                    <properties.dir>\Users\lambert\project\ACT-POM\conf</properties.dir>
                 </properties>
             </profile>
             <profile>
