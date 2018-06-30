@@ -18,7 +18,6 @@ class App extends Component {
         this.state = {
             menus:menus,
             path:this.props.location.pathname
-           // path:"/"
         }
     }
   render() {

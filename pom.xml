@@ -211,7 +211,7 @@
             <!--<module>app/core/model</module>-->
           
             <!--<module>app/biz/shared</module>-->
-            <!--<module>app/biz/feedback</module>-->
+            <module>app/biz/act</module>
             <!--<module>app/common/service/integration</module>-->
             <!--<module>app/biz/service-impl</module>-->
             <!--<module>app/common/service/facade</module>-->
