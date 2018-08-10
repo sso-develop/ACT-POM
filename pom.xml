@@ -1,316 +1,325 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.lambert.act</groupId>
-    <artifactId>act-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<groupId>com.lambert.act</groupId>
+	<artifactId>act-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-        <properties>
+	<properties>
 
-            <!-- main version setting -->
-            <spring.version>4.1.4.RELEASE</spring.version>
-            <validator.version>5.4.1.Final</validator.version>
-            <!-- tools version setting -->
-            <jackson.version>2.2.3</jackson.version>
-            <shiro.version>1.2.3</shiro.version>
-            <activiti.version>5.18.0</activiti.version>
-            <jedis.version>2.9.0</jedis.version>
-            <spring-data-redis.version>1.6.0.RELEASE</spring-data-redis.version>
+		<!-- main version setting -->
+		<spring.version>4.1.4.RELEASE</spring.version>
+		<validator.version>5.4.1.Final</validator.version>
+		<!-- tools version setting -->
+		<jackson.version>2.2.3</jackson.version>
+		<shiro.version>1.2.3</shiro.version>
+		<activiti.version>5.18.0</activiti.version>
+		<jedis.version>2.9.0</jedis.version>
+		<spring-data-redis.version>1.6.0.RELEASE</spring-data-redis.version>
 
-            <druid.version>1.0.31</druid.version>
+		<druid.version>1.0.31</druid.version>
 
-            <commons-lang3.version>3.3.2</commons-lang3.version>
-            <commons-beanutils.version>1.9.2</commons-beanutils.version>
-            <commons-io.version>2.4</commons-io.version>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
+		<commons-io.version>2.4</commons-io.version>
 
-            <guava.version>17.0</guava.version>
-            <slf4j.version>1.7.7</slf4j.version>
-            <poi.version>3.9</poi.version>
+		<guava.version>17.0</guava.version>
+		<slf4j.version>1.7.7</slf4j.version>
+		<poi.version>3.9</poi.version>
 
-            <hessian.version>4.0.38</hessian.version>
-            <!-- environment setting -->
-            <jdk.version>1.7</jdk.version>
-            <tomcat.version>2.2</tomcat.version>
-            <webserver.port>8080</webserver.port>
-            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-
-
-        </properties>
-
-
-        <dependencies>
-
-
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <!-- 默认的版本为3.8.1，修改为4.x,因为3.x使用的为编程的方式，4.x为注解的形式。 -->
-                <version>4.12</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-		      <groupId>org.activiti</groupId>
-		      <artifactId>activiti-engine</artifactId>
-		      <version>${activiti.version}</version>
-		    </dependency>
-		    <dependency>
-		      <groupId>org.activiti</groupId>
-		      <artifactId>activiti-spring</artifactId>
-		      <version>${activiti.version}</version>
-		    </dependency>
-            <!-- SPRING begin -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jdbc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-			    <groupId>org.springframework</groupId>
-			    <artifactId>spring-beans</artifactId>
-			    <version>${spring.version}</version>
-			</dependency>
-			<dependency>
-			    <groupId>org.springframework</groupId>
-			    <artifactId>spring-tx</artifactId>
-			    <version>${spring.version}</version>
-			</dependency>
-            <!-- SPRING end -->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api</artifactId>
-                <version>2.5</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>com.caucho</groupId>
-                <artifactId>hessian</artifactId>
-                <version>${hessian.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>redis.clients</groupId>
-                <artifactId>jedis</artifactId>
-                <version>2.9.0</version>
-            </dependency>
-            <!-- google java lib -->
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>17.0</version>
-            </dependency>
-
-            <!-- *****************数据库******************* -->
-
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-               <!--<version>5.1.34</version>-->
-               <version>8.0.11</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>3.4.4</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis-spring</artifactId>
-                <version>1.3.1</version>
-            </dependency>
-
-            <!-- bean validate -->
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>${validator.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-            <!-- ******************************************** -->
-
-
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>1.2.3</version>
-            </dependency>
-
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-core</artifactId>
-                <version>1.2.3</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.7</version>
-            </dependency>
-            <!-- <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>1.7.7</version>
-            </dependency> -->
-            <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>2.6</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>1.2.34</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>2.2.3</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>2.2.3</version>
-            </dependency>
-        </dependencies>
-
-        <modules>
-            <!--<module>app/common/util</module>-->
-            <!--<module>app/core/service</module>-->
-            <!--<module>app/core/model</module>-->
-          
-            <!--<module>app/biz/shared</module>-->
-            <module>app/biz/act</module>
-            <!--<module>app/common/service/integration</module>-->
-            <!--<module>app/biz/service-impl</module>-->
-            <!--<module>app/common/service/facade</module>-->
-            <module>app/test</module>
-            <module>app/common/dal</module>
-            <module>app/web/home</module>
-            <!--<module>app/web/feedback</module>-->
-            <!--<module>assembly</module>-->
-        </modules>
+		<hessian.version>4.0.38</hessian.version>
+		<!-- environment setting -->
+		<jdk.version>1.7</jdk.version>
+		<tomcat.version>2.2</tomcat.version>
+		<webserver.port>8080</webserver.port>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 
 
-        <profiles>
-            <profile>
-                <id>local</id>
-                <activation>
-                    <activeByDefault>true</activeByDefault>
-                </activation>
-                <properties>
-                    <properties.dir>\Users\lambert\project\ACT-POM\conf</properties.dir>
-                </properties>
-            </profile>
-            <profile>
-                <id>test</id>
-                <properties>
-                    <properties.dir>\home\lambert\conf</properties.dir>
-                </properties>
-            </profile>
-        </profiles>
-        <build>
-            <filters>
-                <filter>${properties.dir}\act.properties</filter>
-            </filters>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.7</version>
-                    <configuration>
-                        <useDefaultDelimiters>false</useDefaultDelimiters>
-                        <delimiters>
-                            <delimiter>$[*]</delimiter>
-                        </delimiters>
-                        <encoding>UTF-8</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.6</version>
-                    <configuration>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                        <webResources>
-                            <resource>
-                                <directory>src/main/webapp</directory>
-                                <filtering>true</filtering>
-                                <includes>
-                                    <include>**/*.html</include>
-                                    <include>**/*.js</include>
-                                    <include>**/*.css</include>
-                                    <include>**/*.xml</include>
-                                </includes>
-                            </resource>
-                        </webResources>
-                    </configuration>
-                </plugin>
+	</properties>
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.2</version>
-                    <configuration>
-                        <source>${jdk.version}</source>
-                        <target>${jdk.version}</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.tomcat.maven</groupId>
-                    <artifactId>tomcat7-maven-plugin</artifactId>
-                    <version>2.2</version>
-                    <configuration>
-                        <port>8081</port>
-                        <!-- <url>http://localhost:8080/manager/html</url> -->
-                        <server>tomcat</server>
-                        <path>/</path>
-                    </configuration>
-                </plugin>
-            </plugins>
-            <resources>
-                <resource>
-                    <directory>${basedir}/src/main/resources</directory>
-                    <filtering>true</filtering>
-                </resource>
-            </resources>
-            <testResources>
-                <testResource>
-                    <directory>${basedir}/src/test/resources</directory>
-                </testResource>
-            </testResources>
-        </build>
-    </project>
+
+	<dependencies>
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<!-- 默认的版本为3.8.1，修改为4.x,因为3.x使用的为编程的方式，4.x为注解的形式。 -->
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>${activiti.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<version>${activiti.version}</version>
+		</dependency>
+		<!-- SPRING begin -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- SPRING end -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>${hessian.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<!-- google java lib -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>17.0</version>
+		</dependency>
+
+		<!-- *****************数据库******************* -->
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<!--<version>5.1.34</version> -->
+			<version>8.0.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<!-- bean validate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${validator.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
+		</dependency>
+		<!-- ******************************************** -->
+
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
+			<version>1.7.7</version> </dependency> -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.34</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+		
+	</dependencies>
+
+	<modules>
+		<module>app/common/util</module>
+		<!--<module>app/core/service</module> -->
+		<!--<module>app/core/model</module> -->
+
+		<!--<module>app/biz/shared</module> -->
+		<module>app/biz/act</module>
+		<!--<module>app/common/service/integration</module> -->
+		<!--<module>app/biz/service-impl</module> -->
+		<!--<module>app/common/service/facade</module> -->
+		<module>app/test</module>
+		<module>app/common/dal</module>
+		<module>app/web/home</module>
+		<module>app/web/act</module>
+		<!--<module>assembly</module> -->
+	</modules>
+
+
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<properties.dir>\Users\lambert\project\ACT-POM\conf</properties.dir>
+			</properties>
+		</profile>
+		<profile>
+			<id>win</id>
+			<properties>
+				<properties.dir>D:\workspace-sts\ACT-POM\conf</properties.dir>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<properties.dir>\home\lambert\conf</properties.dir>
+			</properties>
+		</profile>
+	</profiles>
+	<build>
+		<filters>
+			<filter>${properties.dir}\act.properties</filter>
+		</filters>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<useDefaultDelimiters>false</useDefaultDelimiters>
+					<delimiters>
+						<delimiter>$[*]</delimiter>
+					</delimiters>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<filtering>true</filtering>
+							<includes>
+								<include>**/*.html</include>
+								<include>**/*.js</include>
+								<include>**/*.css</include>
+								<include>**/*.xml</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>8081</port>
+					<!-- <url>http://localhost:8080/manager/html</url> -->
+					<server>tomcat</server>
+					<path>/</path>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>${basedir}/src/test/resources</directory>
+			</testResource>
+		</testResources>
+	</build>
+</project>
