@@ -9,17 +9,31 @@ class App extends Component {
     constructor(props) {
         super(props)
         let menus = [{
-            title: '流程列表',
+            title: '流程部署',
             icon: 'user',
-            to:'/List',
+            to:'/definition',
             showSub:true
-
-        }];
+        },{
+              title: '审批流程',
+              icon: 'team',
+              to:'/instance',
+              showSub:true
+          },{
+              title: '审批历史',
+              icon: 'ellipsis',
+              to:'/history',
+              showSub:true
+          }];
         this.state = {
             menus:menus,
             path:this.props.location.pathname
         }
     }
+    componentWillReceiveProps(nextProps){
+    		this.setState({
+        		path:nextProps.location.pathname
+        	});
+    	}
   render() {
     return (
         <Layout style={{ minHeight: '100vh' }}>
