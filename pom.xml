@@ -233,7 +233,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<properties.dir>\Users\lambert\project\ACT-POM\conf</properties.dir>
+				<properties.dir>\Users\lambert\project\conf</properties.dir>
 			</properties>
 		</profile>
 		<profile>
