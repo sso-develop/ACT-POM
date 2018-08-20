@@ -9,18 +9,28 @@ class App extends Component {
     constructor(props) {
         super(props)
         let menus = [{
-            title: '流程部署',
+            title: '分组管理',
+            icon: 'team',
+            to:'/group',
+            showSub:true
+        },{
+            title: '用户管理',
             icon: 'user',
+            to:'/user',
+            showSub:true
+        },{
+            title: '流程部署',
+            icon: 'usb',
             to:'/definition',
             showSub:true
         },{
               title: '审批流程',
-              icon: 'team',
+              icon: 'fork',
               to:'/instance',
               showSub:true
           },{
               title: '审批历史',
-              icon: 'ellipsis',
+              icon: 'database',
               to:'/history',
               showSub:true
           }];

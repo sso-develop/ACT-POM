@@ -11,6 +11,7 @@ public class TaskModel {
 	
 	private String id;
 	private String assignee;
+	private String assigneeName;
 	private String name;
 	private String createTime;
 	private String processInstanceId;
@@ -52,7 +53,13 @@ public class TaskModel {
 	public void setProcessDefinitionId(String processDefinitionId) {
 		this.processDefinitionId = processDefinitionId;
 	}
-
+	public String getAssigneeName() {
+		return assigneeName;
+	}
+	public void setAssigneeName(String assigneeName) {
+		this.assigneeName = assigneeName;
+	}
+	
 	
 	
 }

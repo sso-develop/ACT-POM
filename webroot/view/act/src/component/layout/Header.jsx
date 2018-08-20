@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout ,Breadcrumb,Icon,Tooltip,Avatar } from 'antd';
+import { Layout ,Breadcrumb,Icon,Tooltip } from 'antd';
 
 const { Header } = Layout;
 class Heade extends Component {

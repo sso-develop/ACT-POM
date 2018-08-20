@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Table,Form,Input,Button,Row,Col,Modal,Upload,Icon,message,Popconfirm,Divider} from 'antd';
+import { Table,Form,Modal,Icon,message,Divider} from 'antd';
 import $ from 'jquery';
 
-const FormItem = Form.Item;
 class Instance extends Component {
 
 	constructor(props) {
@@ -10,7 +9,10 @@ class Instance extends Component {
     	this.state = {
                dataSource:[],
                visible:false,
-               pager:{
+               searchData:{
+               	
+               },
+               pagination:{
                     total:0,
                     pageSize:0,
                     loading:false
@@ -20,11 +22,15 @@ class Instance extends Component {
     }
     getHistoricActivityInstance(){
 		let that = this;
-		$.post("/findHistoricActivityInstance.json", {},function(data) {
+		$.post("/findHistoricActivityInstanceByPager.json", this.state.searchData,function(data) {
 		     if(!data.success){
                 message.error(data.msg)
              }else{
-                that.setState({dataSource:data.data.result})
+             	let pagination = that.state.pagination;
+             	pagination.total = data.data.totalCount;
+                pagination.current = data.data.pageNumber;
+                pagination.pageSize = data.data.pageSize;
+                that.setState({dataSource:data.data.result,pagination:pagination})
              }
 		});
 	}
@@ -87,7 +93,6 @@ class Instance extends Component {
               title: '操作',
               key: 'action',
               render: (text, record) => {
-                var id = record.id;
                 return (
                        <span>
                             <a onClick = {this.historicActivityInfo.bind(this,record)}>任务参数</a>
@@ -97,12 +102,32 @@ class Instance extends Component {
                      )
               }
         }];
+        const slef = this;
         return(
             <div>
                 <Table
                 bordered
-                loading = {this.state.pager.loading}
-                rowKey={record => record.id} dataSource={this.state.dataSource} columns={columns} />
+                loading = {this.state.pagination.loading}
+                rowKey={record => record.id} 
+                pagination={{
+        					showQuickJumper: true,
+        					current:this.state.searchData.currentPage,
+		       				total:this.state.pagination.total,
+		       				pageSize:this.state.pagination.pageSize,
+		       				showTotal: function () {  //设置显示一共几条数据
+					            return '共 ' + (slef.state.pagination.total) + ' 条数据'; 
+					        },
+					        onChange(current) {  //点击改变页数的选项时调用函数，current:将要跳转的页数
+						          const data = slef.state.searchData;
+						          data.currentPage = current;
+						          slef.setState({
+						          	searchData:data
+						          })
+						          slef.getHistoricActivityInstance(slef);
+						       
+						    },  
+				     }}
+                dataSource={this.state.dataSource} columns={columns} />
             </div>
         )
     }

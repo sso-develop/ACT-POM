@@ -1,4 +1,4 @@
-package com.lambert.act.web.act;
+package com.lambert.act.web.act.controller;
 
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;

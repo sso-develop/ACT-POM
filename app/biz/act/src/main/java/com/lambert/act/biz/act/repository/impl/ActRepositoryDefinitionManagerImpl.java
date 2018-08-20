@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.alibaba.druid.sql.visitor.functions.Concat;
 import com.lambert.act.biz.act.repository.ActRepositoryDefinitionManager;
 import com.lambert.act.biz.act.repository.convertor.ProcessDefinitionConvertor;
 import com.lambert.act.biz.act.repository.model.ProcessDefinitionModel;
@@ -35,15 +36,18 @@ public class ActRepositoryDefinitionManagerImpl implements ActRepositoryDefiniti
 					/* 排序 */
 					.orderByProcessDefinitionVersion().asc()// 按照版本的升序排列
 					// .orderByProcessDefinitionName().desc()//按照流程定义的名称降序排列
-
+					.latestVersion()
 					.list();// 返回一个集合列表，封装流程定义
 			// .singleResult();//返回唯一结果集
 			// .count();//返回结果集数量
 			// .listPage(firstResult, maxResults)//分页查询
 
+			long count = repositoryService.createProcessDefinitionQuery()// 创建一个流程定义查询
+					.count();
+
 			List<ProcessDefinitionModel> processDefinitionModelList = ProcessDefinitionConvertor.convertor2Model(list);
-			
 			pager.setResult(processDefinitionModelList);
+			pager.setTotalCount((int)count);
 			return new DefaultResult<Pager>(pager);
 		} catch (Exception ex) {
 			LOGGER.error(ex.getMessage(), ex);
@@ -56,7 +60,9 @@ public class ActRepositoryDefinitionManagerImpl implements ActRepositoryDefiniti
 	@Override
 	public DefaultResult<Boolean> createDeployment(String filename, InputStream is) {
 		try {
-			repositoryService.createDeployment().addInputStream(filename, is).deploy();
+			repositoryService.createDeployment()
+			.addInputStream(filename, is)
+			.deploy();
 			return new DefaultResult<Boolean>(true);
 		} catch (Exception ex) {
 			LOGGER.error(ex.getMessage(), ex);

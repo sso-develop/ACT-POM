@@ -21,6 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.alibaba.fastjson.JSON;
 import com.lambert.act.biz.act.repository.ActProcessInstanceMananger;
 import com.lambert.act.common.uitl.result.DefaultResult;
 import com.lambert.act.common.uitl.result.DefaultResultCode;
@@ -55,7 +56,6 @@ public class ActProcessInstanceManangerImpl implements ActProcessInstanceManange
 	public InputStream traceprocess(String definitionId, String instanceId) {
 	
 		BpmnModel bpmnmodel = repositoryService.getBpmnModel(definitionId);
-
 		List<String> activeActivityIds = runtimeService.getActiveActivityIds(instanceId);
 
 		DefaultProcessDiagramGenerator gen = new DefaultProcessDiagramGenerator();
@@ -69,7 +69,6 @@ public class ActProcessInstanceManangerImpl implements ActProcessInstanceManange
 				(ProcessDefinitionEntity) ((RepositoryServiceImpl) repositoryService)
 						.getDeployedProcessDefinition(definitionId),
 				historicActivityInstances);
-
 		InputStream in = gen.generateDiagram(bpmnmodel, "png", activeActivityIds, highLightedFlows, "宋体", "宋体", null,
 				1.0);
 		
