@@ -3,9 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+ <link rel="stylesheet" type="text/css" href="http://192.168.0.103:8081/static/css/main.e8214898.css" />
 </head>
 <body>
 <div id="root"></div>
 </body>
 </html>
-<script type="text/javascript" src="http://localhost:3000/static/js/bundle.js"></script>
+<!--<script type="text/javascript" src="http://localhost:3000/static/js/bundle.js"></script>-->
+
+<script type="text/javascript" src="http://192.168.0.103:8081/static/js/main.cb8be210.js"></script>
