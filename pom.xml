@@ -253,6 +253,7 @@
 		<filters>
 			<filter>${properties.dir}\act.properties</filter>
 		</filters>
+		<finalName>act</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -272,7 +273,6 @@
 				<version>2.6</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<warName>act</warName>
 					<webResources>
 						<resource>
 							<directory>src/main/webapp</directory>
