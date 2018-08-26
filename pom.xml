@@ -245,7 +245,7 @@
 		<profile>
 			<id>test</id>
 			<properties>
-				<properties.dir>\home\lambert\conf</properties.dir>
+				<properties.dir>\home\lambert\Documents\soft\tomcat\act\conf</properties.dir>
 			</properties>
 		</profile>
 	</profiles>
