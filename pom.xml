@@ -232,7 +232,22 @@
 	</dependencies>
 
 	
+	<modules>
+		<module>app/common/util</module>
+		<!--<module>app/core/service</module> -->
+		<!--<module>app/core/model</module> -->
 
+		<!--<module>app/biz/shared</module> -->
+		<module>app/biz/act</module>
+		<!--<module>app/common/service/integration</module> -->
+		<!--<module>app/biz/service-impl</module> -->
+		<!--<module>app/common/service/facade</module> -->
+		<module>app/test</module>
+		<module>app/common/dal</module>
+		<module>app/web/home</module>
+		<module>app/web/act</module>
+		<!--<module>assembly</module> -->
+	</modules>
 
 
 	<profiles>
