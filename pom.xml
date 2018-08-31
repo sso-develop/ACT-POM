@@ -274,6 +274,7 @@
 		<filters>
 			<filter>${properties.dir}\act.properties</filter>
 		</filters>
+		<defaultGoal>compile</defaultGoal>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
