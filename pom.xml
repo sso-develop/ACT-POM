@@ -266,7 +266,7 @@
 		<profile>
 			<id>test</id>
 			<properties>
-				<properties.dir>/home/lambert/tomcat/act/config</properties.dir>
+				<properties.dir>\home\lambert\tomcat\act\config</properties.dir>
 			</properties>
 		</profile>
 	</profiles>
