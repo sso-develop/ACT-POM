@@ -19,6 +19,7 @@ import com.lambert.act.biz.act.repository.ActHistoryManager;
 import com.lambert.act.biz.act.repository.ActProcessInstanceMananger;
 import com.lambert.act.biz.act.repository.ActTaskMananger;
 import com.lambert.act.biz.act.repository.model.HistoricActivityInstanceModel;
+import com.lambert.act.biz.act.repository.model.TaskModel;
 import com.lambert.act.biz.act.repository.query.HistoricActivityInstanceQueryObj;
 import com.lambert.act.biz.act.repository.query.TaskQueryObj;
 import com.lambert.act.common.uitl.result.DefaultResult;
@@ -74,6 +75,13 @@ public class InstanceController {
 	@RequestMapping(value="/findPersonTask.json",method = RequestMethod.POST)
 	public @ResponseBody ResultModel  findPersonTask(ResultModel resultModel,TaskQueryObj queryObj){
 		DefaultResult<Pager> result = actTaskMananger.findPersonTask(queryObj);
+		DefaultWebUtils.putResult2ModelMap(result, resultModel);
+		return resultModel;
+	}
+	
+	@RequestMapping(value="/queryTaskById.json",method = RequestMethod.POST)
+	public @ResponseBody ResultModel queryTaskById(ResultModel resultModel,String id) {
+		DefaultResult<TaskModel> result = actTaskMananger.queryTaskById(id);
 		DefaultWebUtils.putResult2ModelMap(result, resultModel);
 		return resultModel;
 	}
