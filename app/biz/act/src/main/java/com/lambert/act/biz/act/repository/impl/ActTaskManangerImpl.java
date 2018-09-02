@@ -109,5 +109,18 @@ public class ActTaskManangerImpl implements ActTaskMananger {
 			return new DefaultResult(DefaultResultCode.SERVER_EXCEPTION, ex.getMessage());
 		}
 	}
+	@Override
+	public DefaultResult<TaskModel> queryTaskById(String id) {
+		// TODO Auto-generated method stub
+		try {
+			Task task = taskService // 与任务相关的service（正在执行）
+			.createTaskQuery() // 创建一个任务查询对象
+			.taskId(id).singleResult();
+			return new DefaultResult<TaskModel>(TaskModelConvertor.convertor2Model(task));
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+			return new DefaultResult(DefaultResultCode.SERVER_EXCEPTION, e.getMessage());
+		}
+	}
 
 }
