@@ -17,7 +17,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	
+	<!-- 
 	<filter>
 		<filter-name>ssoFilter</filter-name>
 		<filter-class>com.lambert.common.service.facade.filter.SSOFilter</filter-class>
@@ -31,7 +31,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping> 
 	
-	<!-- 权限控制(选配) -->
+	权限控制(选配)
 	<filter>
 		<filter-name>permissionFilter</filter-name>
 		<filter-class>com.lambert.common.service.facade.filter.PermissionFilter</filter-class>
@@ -43,7 +43,7 @@
 	<filter-mapping>
 		<filter-name>permissionFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 
 	<!-- MVC Servlet -->
 	<servlet>

@@ -1,4 +1,4 @@
-package com.lambert.act.common.service.integration;
+package com.lambert.act.common.service.facade;
 
 /**
  * Hello world!

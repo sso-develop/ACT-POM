@@ -229,18 +229,30 @@
 		    <artifactId>velocity-engine-core</artifactId>
 		    <version>2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>${hessian.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!--  -->
+		<dependency>
+	  		<groupId>com.lambert</groupId>
+			<artifactId>lambert-common-service-facade</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+	  	</dependency>
 	</dependencies>
 
 	<modules>
 		<module>app/common/util</module>
-		<!--<module>app/core/service</module> -->
+		<module>app/core/service</module>
 		<!--<module>app/core/model</module> -->
 
 		<!--<module>app/biz/shared</module> -->
 		<module>app/biz/act</module>
-		<!--<module>app/common/service/integration</module> -->
-		<!--<module>app/biz/service-impl</module> -->
-		<!--<module>app/common/service/facade</module> -->
+		<module>app/common/service/integration</module> 
+		<module>app/biz/service-impl</module>
+		<module>app/common/service/facade</module> 
 		<module>app/test</module>
 		<module>app/common/dal</module>
 		<module>app/web/home</module>
@@ -254,7 +266,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<properties.dir>\Users\lambert\project\conf</properties.dir>
+				<properties.dir>\Users\lambert\project\conf\act</properties.dir>
 			</properties>
 		</profile>
 		<profile>
@@ -327,7 +339,7 @@
 					<port>8081</port>
 					<!-- <url>http://localhost:8080/manager/html</url> -->
 					<server>tomcat</server>
-					<path>/</path>
+					<path>/act</path>
 				</configuration>
 			</plugin>
 		</plugins>
