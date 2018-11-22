@@ -74,7 +74,11 @@ public class ActResult<T> implements Serializable {
      * 返回�?
      */
     private ActResultCode resultCode;
-
+    
+    public ActResult() {
+    	super();
+    }
+    
     /**
      * 只用value进行构�??,code总是为success
      * @param valueObject

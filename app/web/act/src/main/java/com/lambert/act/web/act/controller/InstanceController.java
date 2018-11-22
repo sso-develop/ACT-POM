@@ -45,7 +45,7 @@ public class InstanceController {
 		try {
 			JSONObject  jsonObject = JSONObject.parseObject(variables);
 			map = (Map<String,Object>)jsonObject;
-		} catch (Exception ex) {
+		} catch (Exception ex) {	
 			result = new DefaultResult<Boolean>(DefaultResultCode.ILLEGAL_PARAMS, ex.getMessage());
 			DefaultWebUtils.putResult2ModelMap(result, resultModel);
 			return resultModel;

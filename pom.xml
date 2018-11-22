@@ -266,7 +266,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<properties.dir>\Users\lambert\project\conf\act</properties.dir>
+				<properties.dir>\Users\lambert\git\ACT-POM\conf</properties.dir>
 			</properties>
 		</profile>
 		<profile>
